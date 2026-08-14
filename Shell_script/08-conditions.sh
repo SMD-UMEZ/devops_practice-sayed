@@ -6,8 +6,9 @@ NUMBER=$1
 #ne - not equal
 #le - less than or equal
 #ge - greater than or equal
+
 if [ $NUMBER -gt 20 ]; then
-echo " given Number is greater than 20"
+        echo " greater than 20"
 elif [ $NUMBER -eq 20 ]
-  echo " given Number is equal to 20"
-fi
+        echo "equal to 20"
+        fi
