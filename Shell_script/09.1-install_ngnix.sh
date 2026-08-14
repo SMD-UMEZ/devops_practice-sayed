@@ -7,7 +7,7 @@ echo "please login with root access to run this script"
 exit 1
 fi
 
-dnf install ngnix -y
+dnf install nginx -y
 
 if [ $? -ne 0 ]; then 
 echo " installation failed"
