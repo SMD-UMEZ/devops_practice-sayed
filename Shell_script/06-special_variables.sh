@@ -13,4 +13,4 @@ echo " current script process ID: $$"
 sleep 5 &
 echo " bg pid: $!"
 echo "line no: $LINENO"
-echo " executed in seconds: $seconds "
+echo " executed in seconds: $SECONDS"
