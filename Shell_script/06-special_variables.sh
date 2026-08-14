@@ -15,4 +15,4 @@ echo " bg pid: $!"
 wait $!
 echo "line no: $LINENO"
 echo " executed in seconds: $SECONDS"
-$RANDOM
+echo "random numner:$RANDOM"
