@@ -10,4 +10,4 @@ echo "total count:$SUM"
 ### array #####
 MOVIES=("RRR" "SPIDER" "AVENGERS")
 echo "all movie names: ${MOVIES[@]}"
-echo "third movie name: ${MOVIES[3]}"
+echo "third movie name: ${MOVIES[2]}"
