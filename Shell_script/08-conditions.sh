@@ -12,3 +12,4 @@ elif [ $Number -eq 20 ]
 echo " given Number is equal to 20"
 else [ $Number -lt 20 ]
 echo " Given number is less than 20 "
+fi
