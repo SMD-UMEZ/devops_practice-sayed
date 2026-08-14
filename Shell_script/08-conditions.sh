@@ -10,5 +10,4 @@ if [ $NUMBER -gt 20 ]; then
 echo " given Number is greater than 20"
 elif [ $NUMBER -eq 20 ]
   echo " given Number is equal to 20"
-
 fi
