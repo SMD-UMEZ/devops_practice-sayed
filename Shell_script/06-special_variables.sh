@@ -12,5 +12,7 @@ echo " $PWD "
 echo " current script process ID: $$"
 sleep 5 &
 echo " bg pid: $!"
+wait $!
 echo "line no: $LINENO"
 echo " executed in seconds: $SECONDS"
+$RANDOM
