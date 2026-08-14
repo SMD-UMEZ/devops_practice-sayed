@@ -8,7 +8,7 @@ Number=$1
 #ge - greater than or equal
 if [ $Number -gt 20 ];then
 echo "given number is greater then 20"
-elif [ $Number -eq 20 ]
+elif [ $Number -eq 20 ]; then
 echo "given no is equal to 20"
 else
 echo "given number is less then 20"
