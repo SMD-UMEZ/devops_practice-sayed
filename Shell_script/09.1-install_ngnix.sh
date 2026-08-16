@@ -8,9 +8,8 @@ exit 1
 fi
 
 dnf install pythddon -y
-
-echo " installing python......"
 status=$($?)
+echo " installing python......"
 if [ $status -ne 0 ]; then
 echo " python installation failed"
 exit 1
