@@ -10,9 +10,10 @@ fi
 dnf install pythddon -y
 
 echo " installing python......"
-
-if [ $? -ne 0 ]; then
+status=$($?)
+if [ $status -ne 0 ]; then
 echo " python installation failed"
+exit 1
 else
 echo " python installation success"
 fi
