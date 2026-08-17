@@ -33,7 +33,7 @@ valid1 mysql $?
 
 dnf list installed python &>> log_files
  valid python $?
- dnf install python -y &>> log_files
+ dnf install python3 gcc python3-devel -y &>> log_files
 valid1 python $?
 
 
