@@ -16,5 +16,5 @@ fi
 
 
 if [ $Number -lt 20 ];then
-Echo " give no is lessthan 20"
+echo " give no is lessthan 20"
 fi
