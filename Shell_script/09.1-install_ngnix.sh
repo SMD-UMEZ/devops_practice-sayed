@@ -1,19 +1,9 @@
 #!/bin/bash
 
-USER=$( id -u)
+username=$(id -u)
 
-if [ $USER -ne 0 ]; then 
-echo "please login as root user"
-exit 1
-fi
-
-dnf install pytdfsdfsdfsfhddon -y
-
-if [ $? -ne 0 ]; then
-echo " python installation failed"
-exit 1
+if [ $username -eq 0 ]; then
+echo "Installing mongodb............"
 else
-echo " python installation success"
+echo "login as root user to proceed..."
 fi
-
-
