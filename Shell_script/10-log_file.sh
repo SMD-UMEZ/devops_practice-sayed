@@ -1,8 +1,8 @@
 #!/bin/bash
 
 user=$(id -u)
-All_logs=/home/ec2-user/shell-logs/
-log_files="$All_logs/$0.log"  ## /home/ec2-user/shell-logs/filename.log##
+ALL=/home/ec2-user/shell-logs
+LOG="$ALL/$0.log"  ## /home/ec2-user/shell-logs/filename.log##
 if [ $user -ne 0 ]; then
 echo "please login as Root user"
 exit 1
@@ -21,19 +21,19 @@ valid1(){
     echo "Installation successful"
     fi
 }
-dnf list installed nginx &>> $log_files
+dnf list installed nginx &>> $LOG
  valid nginx $?
- dnf install nginx -y &>> $log_files
+ dnf install nginx -y &>> $LOG
 valid1 nginx $?
 
-dnf list installed mysql &>> $log_files
+dnf list installed mysql &>> $LOG
  valid mysql $?
- dnf install mysql -y &>> $log_files
+ dnf install mysql -y &>> $LOG
 valid1 mysql $?
 
-dnf list installed python3 &>> $log_files
+dnf list installed python3 &>> $LOG
  valid python $?
- dnf install python3 gcc python3-devel -y &>> $log_files
+ dnf install python3 gcc python3-devel -y &>> $LOG
 valid1 python $?
 
 
