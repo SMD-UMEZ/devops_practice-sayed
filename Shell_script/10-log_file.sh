@@ -10,6 +10,7 @@ fi
 valid(){
     if [ $2 -eq 0 ];then
 echo "The $1 programm is alredy installed.......Skipping"
+exit 1
 else
 echo "Installing the $1 software" 
 fi
