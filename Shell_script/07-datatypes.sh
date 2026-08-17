@@ -11,3 +11,10 @@ echo "total count:$SUM"
 MOVIES=("RRR" "SPIDER" "AVENGERS")
 echo "all movie names: ${MOVIES[@]}"
 echo "third movie name: ${MOVIES[2]}"
+
+
+
+
+
+Names=("Sayed""Mahammad""Umez")
+echo "My name is ${Names[@]}"
