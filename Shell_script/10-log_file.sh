@@ -9,9 +9,9 @@ exit 1
 fi
 valid(){
     if [ $2 -eq 0 ];then
-echo "The ngnix programm is alredy installed.......Skipping"
+echo "The $1 programm is alredy installed.......Skipping"
 else
-echo "Installing the ngnix software" 
+echo "Installing the $1 software" 
 fi
 }
 valid1(){
