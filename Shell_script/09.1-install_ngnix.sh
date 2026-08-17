@@ -3,13 +3,13 @@
 username=$(id -u)
 
 if [ $username -eq 0 ]; then
-echo "Installing mongodb............"
+echo "Installing nodejs............"
 else
 echo "login as root user to proceed..."
 exit 1
 fi
 
-dnf install mongodb -y
+dnf install nodejs -y
 
 if [ $? -ne 0 ];then
 echo "program is not installed"
