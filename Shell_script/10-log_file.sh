@@ -21,10 +21,10 @@ valid1(){
     echo "Installation successful"
     fi
 }
-dnf list installed ngnix &>> log_files
- valid ngnix $?
- dnf install ngnix -y &>> log_files
-valid1 ngnix $?
+dnf list installed nginx &>> log_files
+ valid nginx $?
+ dnf install nginx -y &>> log_files
+valid1 nginx $?
 
 dnf list installed mysql &>> log_files
  valid mysql $?
