@@ -7,14 +7,7 @@ if [ $user -ne 0 ]; then
 echo "please login as Root user"
 exit 1
 fi
-valid(){
-    if [ $2 -eq 0 ];then
-echo "The $1 programm is alredy installed.......Skipping"
-exit 1
-else
-echo "Installing the $1 software" 
-fi
-}
+
 valid1(){
     if [ $2 -ne 0 ]; then
     echo "Installation is unsuccessfull"
@@ -23,18 +16,25 @@ valid1(){
     fi
 }
 dnf list installed nginx &>> $LOG
- valid nginx $?
+ if [ $? -eq 0 ];then
+ echo "alredy insyalled"
+ else
  dnf install nginx -y &>> $LOG
 valid1 nginx $?
+fi
 
 dnf list installed mysql &>> $LOG
- valid mysql $?
+ if [ $? -eq 0 ];then
+ echo "alredy insyalled"
+ else
  dnf install mysql -y &>> $LOG
 valid1 mysql $?
-
+fi
 dnf list installed python3 &>> $LOG
- valid python $?
+if [ $? -eq 0 ];then
+ echo "alredy insyalled"
+ else
  dnf install python3 gcc python3-devel -y &>> $LOG
 valid1 python $?
-
+fi
 
