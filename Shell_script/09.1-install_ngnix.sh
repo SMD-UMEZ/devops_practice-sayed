@@ -9,7 +9,7 @@ echo "login as root user to proceed..."
 exit 1
 fi
 
-dnf install gogfgdb -y
+dnf install mongodb -y
 
 if [ $? -ne 0 ];then
 echo "program is not installed"
