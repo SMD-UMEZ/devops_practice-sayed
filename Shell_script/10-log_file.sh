@@ -15,7 +15,7 @@ echo "Installing the $1 software"
 fi
 }
 valid1(){
-    if [ $2 - ne 0 ]; then
+    if [ $2 -ne 0 ]; then
     echo "Installation is unsuccessfull"
     else
     echo "Installation successful"
