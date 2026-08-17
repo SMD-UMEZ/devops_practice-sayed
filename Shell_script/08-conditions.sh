@@ -13,3 +13,8 @@ echo "given no is equal to 20"
 else
 echo "given number is less then 20"
 fi
+
+
+if [ $Number -lt 20 ];then
+Echo " give no is lessthan 20"
+fi
