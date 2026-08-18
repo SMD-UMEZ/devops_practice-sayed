@@ -5,9 +5,9 @@ LOG=/home/ec2-user/shell-logs
 LOG_FILE=$LOG/$0.log
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 R="\e[31m"
-G="\e[31m"
-Y="\e[31m"
-N="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 if [ $user -eq 0 ];then 
 echo "proceeding with root"
 else 
