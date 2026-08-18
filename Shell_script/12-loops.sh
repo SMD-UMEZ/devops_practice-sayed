@@ -14,7 +14,7 @@ valid(){
     if [ $2 -eq 0 ]; then
     echo "installing $1 programm"
     else 
-    echo"unsuccessfull"
+    echo "unsuccessfull"
     exit 1
     fi
 
