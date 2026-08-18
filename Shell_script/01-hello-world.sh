@@ -3,3 +3,6 @@
 # this is comment
 
 echo " assalamualaikum UMEZ "
+
+
+echo "Umez"
