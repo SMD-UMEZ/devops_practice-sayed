@@ -27,10 +27,10 @@ VALIDATION(){
 }
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
-VALIDATION $? Adding mongodb repo
+VALIDATION $? "Adding mongodb repo"
 
 dnf install mongodb-org -y &>> $LOG_FILE
-VALIDATION $? Installing Mongodb
+VALIDATION $? "Installing Mongodb"
 
 systemctl enable --now mongod
-VALIDATION $? satring and enabling mongodb
+VALIDATION $? "satring and enabling mongodb"
