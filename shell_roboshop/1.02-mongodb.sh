@@ -14,22 +14,22 @@ N="\e[0m"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 if [ $USERID -ne 0 ];then
-echo "run this script with root access" | tee -a $LOGS_FOLDERS
+echo "run this script with root access" | tee -a $LOG_FILES
 exit 1
 fi
 
 VALID(){
     if [ $1 -ne 0 ];then
-    echo -e "$TIMESTAMP  [ERROR] $2 is $R failed $N to install" | tee -a $LOGS_FOLDERS
+    echo -e "$TIMESTAMP  [ERROR] $2 is $R failed $N to install" | tee -a $LOG_FILES
     else
-    echo -e "$TIMESTAMP [INFO] $2 is $G success $N " | tee -a $LOGS_FOLDERS
+    echo -e "$TIMESTAMP [INFO] $2 is $G success $N " | tee -a $LOG_FILES
     fi
 }
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALID $? Mongodb
 
-dnf install mongodb-org -y &>> $LOG_FILE
+dnf install mongodb-org -y &>> $LOG_FILES
 VALIDATION $? "Installing Mongodb"
 
 dnf enable --now mongod
