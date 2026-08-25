@@ -6,14 +6,14 @@ sudo chown -R ec2-user:ec2-user $LOGS_FOLDERS
 sudo chmod -R 755 $LOGS_FOLDERS
 LOG_FILES="$LOGS_FOLDERS/$0.log"
 
-USERID=$( ID -u)
+USERID=$(ID -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
-if [ $? -ne 0 ];then
+if [ $USERID -ne 0 ];then
 echo "run this script with root access" | tee -a $LOGS_FOLDERS
 exit 1
 fi
