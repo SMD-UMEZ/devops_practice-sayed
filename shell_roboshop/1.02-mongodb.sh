@@ -6,7 +6,7 @@ sudo chown -R ec2-user:ec2-user $LOGS_FOLDERS
 sudo chmod -R 755 $LOGS_FOLDERS
 LOG_FILES="$LOGS_FOLDERS/$0.log"
 
-USERID=$(ID -u)
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
