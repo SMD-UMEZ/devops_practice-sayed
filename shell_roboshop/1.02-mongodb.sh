@@ -32,7 +32,7 @@ VALID $? Mongodb
 dnf install mongodb-org -y &>> $LOG_FILES
 VALID $? "Installing Mongodb"
 
-dnf enable --now mongodb
+systemctl enable --now mongod
 VALID $? "satring and enabling mongodb" 
 
 sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf
