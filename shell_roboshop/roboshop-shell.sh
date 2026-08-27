@@ -25,6 +25,7 @@ fi
 aws route53 change-resource-record-sets \
   --hosted-zone-id $ZONE_ID \
   --change-batch '{"Changes":[{"Action":"UPSERT","ResourceRecordSet":{"Name":"'$R53_RECORD'","Type":"A","TTL":1,"ResourceRecords":[{"Value":"'$IP'"}]}}]}'
+  
   IP1=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID \
 --query 'Reservations[*].Instances[*].PublicIpAddress' \
 --output text)
