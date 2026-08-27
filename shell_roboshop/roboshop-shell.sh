@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMI_ID=ami-0220d79f3f480ecf5
-ZONE_ID=Z0556960G0CHQIF223HF
+ZONE_ID="Z0556960G0CHQIF223HF"
 DOMAIN_NAME=mylab.sbs
 
 for instance in $@
@@ -23,7 +23,7 @@ R53_RECORD=$instance.$DOMAIN_NAME
 fi
 ############ Updating R53 record ##############
 aws route53 change-resource-record-sets \
-  --hosted-zone-id ZONE_ID \
+  --hosted-zone-id $ZONE_ID \
   --change-batch '{"Changes":[{"Action":"UPSERT","ResourceRecordSet":{"Name":"'$R53_RECORD'","Type":"A","TTL":1,"ResourceRecords":[{"Value":"'$IP'"}]}}]}'
 
 done
