@@ -7,7 +7,7 @@ DOMAIN_NAME=mylab.sbs
 for instance in $@
 do
 echo "Launching $instance instance"
-INSTANCE_ID=$(aws ec2 run-instances --image-id ami-0220d79f3f480ecf5 --instance-type t3.micro --security-groups roboshop-common roboshop-$instance --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" --query 'Instances[0].InstanceId' --output text)
+INSTANCE_ID=$(aws ec2 run-instances --image-id ami-0220d79f3f480ecf5 --instance-type t3.micro --security-groups roboshop-common roboshop-$instance --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" --user-data $instance.sh --query 'Instances[0].InstanceId' --output text)
 echo "Instance id: $INSTANCE_ID"
 
 if [ $instance == "frontend" ]; then
@@ -29,5 +29,6 @@ aws route53 change-resource-record-sets \
   IP1=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID \
 --query 'Reservations[*].Instances[*].PublicIpAddress' \
 --output text)
-echo "PUB_IP: $IP1 " 
+echo "PUB_IP: $IP1 "
+
 done
