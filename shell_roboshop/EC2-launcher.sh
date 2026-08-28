@@ -14,8 +14,8 @@ INSTANCE_ID=$(
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value='roboshop-$instance'}]' \
   --query 'Instances[0].InstanceId' \
   --output text
-  echo "INSTANCE ID IS: $INSTANCE_ID"
 )
+echo "INSTANCE ID IS: $INSTANCE_ID"
 
 if [ $instance == "frontend" ]; then
 IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID \
