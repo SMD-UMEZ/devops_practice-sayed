@@ -26,11 +26,11 @@ VALIDATION(){
  fi
 }
 
-dnf module disable nodejs -y
+dnf module disable nodejs -y &>> $LOG_FILE
 VALIDATION $? "disabling the previous version"
-dnf install nodejs -y
+dnf install nodejs -y &>> $LOG_FILE
 VALIDATION $? "enabiling the latest version"
-dnf install nodejs -y
+dnf install nodejs -y &>> $LOG_FILE
 VALIDATION $? "Installing Nodejs"
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
 VALIDATION $? "Creating roboshop system user"
