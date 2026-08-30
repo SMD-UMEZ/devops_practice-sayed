@@ -33,7 +33,7 @@ VALIDATION $? "enabiling the latest version"
 dnf install nodejs -y &>> $LOG_FILE
 VALIDATION $? "Installing Nodejs"
 
-id roboshop $LOG_FILE
+id roboshop &>>$LOG_FILE
 if [ $? -eq 0 ];then
    echo -e "Roboshop user already exists...... $Y SKIPPING $N"
    else
