@@ -32,8 +32,13 @@ dnf install nodejs -y &>> $LOG_FILE
 VALIDATION $? "enabiling the latest version"
 dnf install nodejs -y &>> $LOG_FILE
 VALIDATION $? "Installing Nodejs"
+
+id roboshop
+if [ $? -eq 0 ];then
+   echo "Roboshop user already exists"
+   else
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
 VALIDATION $? "Creating roboshop system user"
-
+fi
 mkdir -p /app
 VALIDATION $? "Creating app directory"
