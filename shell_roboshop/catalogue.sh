@@ -5,6 +5,7 @@ sudo mkdir -p $LOG_FOLDER
 sudo chown -R ec2-user:ec2-user $LOG_FOLDER
 sudo chmod -R 755 $LOG_FOLDER
 LOG_FILE="$LOG_FOLDER/$0.log"
+SCRIPT_DIR=$PWD
 
 USERID=$(id -u)
 R="\e[31m"
@@ -40,5 +41,25 @@ if [ $? -eq 0 ];then
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
 VALIDATION $? "Creating roboshop system user"
 fi
+rm -rf /app
+VALIDATION $? "Removing existing code"
+rm -rf /tmp/catalogue.zip
+VALIDATION $? "Removed Catalogue Zip"
 mkdir -p /app
 VALIDATION $? "Creating app directory"
+
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+cd /app 
+unzip /tmp/catalogue.zip &>>LOG_FILE
+VALIDATION $? "Downloaded and extracted cat code"
+
+npm install &>>LOG_FILE
+VALIDATION $? "Installing Dependencies"
+
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service &>>LOG_FILE
+VALIDATION $? "Created systemctl service"
+
+cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo &>>LOG_FILE
+VALIDATION $? "Adding mongo repo"
+dnf install mongodb-mongosh -y &>>LOG_FILE
+VALIDATION $? "Installing Mongodb_client"
