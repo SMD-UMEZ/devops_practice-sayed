@@ -70,9 +70,9 @@ if [ $INDEX -lt 0 ];then
        mongosh --host mongodb.mylab.sbs </app/db/master-data.js &>>LOG_FILE
        VALIDATION $? "Load products"
 else
-       echo "Produts are already loaded ............$Y SKIPPPING $N"
+       echo -e "Produts are already loaded ............$Y SKIPPPING $N"
 fi
-systemctl daemon-reload 
-systemctl enable catalogue 
-systemctl restart catalogue
+systemctl daemon-reload &>>LOG_FILE
+systemctl enable catalogue &>>LOG_FILE
+systemctl restart catalogue &>>LOG_FILE
 VALIDATION $? "enabling and restart"
