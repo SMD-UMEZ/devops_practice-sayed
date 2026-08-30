@@ -48,7 +48,7 @@ VALIDATION $? "Removed Catalogue Zip"
 mkdir -p /app
 VALIDATION $? "Creating app directory"
 
-curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>LOG_FILE
 cd /app 
 unzip /tmp/catalogue.zip &>>LOG_FILE
 VALIDATION $? "Downloaded and extracted cat code"
@@ -63,3 +63,16 @@ cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo &>>LOG_FILE
 VALIDATION $? "Adding mongo repo"
 dnf install mongodb-mongosh -y &>>LOG_FILE
 VALIDATION $? "Installing Mongodb_client"
+
+INDEX=$(mongosh --host mongodb.mylab.sbs --eval 'db.getMongo().getDBNames().indexof("catalogue")') 
+
+if [ $INDEX -lt 0 ];then
+       mongosh --host mongodb.mylab.sbs </app/db/master-data.js &>>LOG_FILE
+       VALIDATION $? "Load products"
+else
+       echo "Produts are already loaded ............$Y SKIPPPING $N"
+fi
+systemctl daemon-reload 
+systemctl enable catalogue 
+systemctl restart catalogue
+VALIDATION $? "enabling and restart"
