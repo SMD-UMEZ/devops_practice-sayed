@@ -63,8 +63,7 @@ cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo &>>LOG_FILE
 VALIDATION $? "Adding mongo repo"
 dnf install mongodb-mongosh -y &>>LOG_FILE
 VALIDATION $? "Installing Mongodb_client"
-
-INDEX=$(mongosh --host mongodb.mylab.sbs --eval 'db.getMongo().getDBNames().indexof("catalogue")') 
+INDEX=$(mongosh --host mongodb.mylab.sbs --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
 
 if [ $INDEX -lt 0 ];then
        mongosh --host mongodb.mylab.sbs </app/db/master-data.js &>>LOG_FILE
