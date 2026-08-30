@@ -33,9 +33,9 @@ VALIDATION $? "enabiling the latest version"
 dnf install nodejs -y &>> $LOG_FILE
 VALIDATION $? "Installing Nodejs"
 
-id roboshop
+id roboshop $LOG_FILE
 if [ $? -eq 0 ];then
-   echo "Roboshop user already exists"
+   echo -e "Roboshop user already exists...... $Y SKIPPING $N"
    else
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
 VALIDATION $? "Creating roboshop system user"
