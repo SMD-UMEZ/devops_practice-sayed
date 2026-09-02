@@ -40,7 +40,7 @@ do
     if [ $ACTION == "create" ];then
         if [ $INSTANCE_ID == "None" ];then
              echo "Launching instances:: Roboshop-$instance"
-             INSTANCE_ID=$(aws ec2 run-instances \
+              INSTANCE_ID=$(aws ec2 run-instances \
                 --image-id $AMI \
                 --instance-type t3.micro \
                 --security-groups roboshop-common roboshop-$instance \
@@ -48,7 +48,7 @@ do
                 --query 'Instances[0].InstanceId' \
                 --output text)
              echo "Instances Launched: $INSTANCE_ID"
-        else
+            else
              echo "roboshop-$instance is already running: $INSTANCE_ID"
         fi
 
