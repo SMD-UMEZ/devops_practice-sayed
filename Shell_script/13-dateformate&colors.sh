@@ -29,7 +29,8 @@ for package in $@
 do
 dnf list installed $package &>> LOG_FILE
  if [ $? -eq 0 ];then 
- echo -e "$TIMESTAMP $1 is alredy insateel.........$Y skipping $N "
+ echo -e "$TIMESTAMP $1 is alredy installed.........$Y skipping $N "
+ exit 1
  else
   echo "$TIMESTAMP installing $1"
  dnf install $package -y &>> LOG_FILE
