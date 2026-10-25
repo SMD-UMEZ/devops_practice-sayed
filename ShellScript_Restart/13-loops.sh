@@ -7,7 +7,7 @@ LOG_FILE="$LOGS_DIR/$0.log"
 if [ $user_id -ne 0 ];then
 echo "please run the script with root user"
 exit 1
-else
+fi
 
 VALIDATE() {
     if [ $2 -ne 0 ];then
@@ -28,5 +28,5 @@ VALIDATE $package $?
 else 
 echo "$package is already installed... skipping"
 fi
-fi
+
 done
