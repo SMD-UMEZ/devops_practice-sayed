@@ -31,7 +31,7 @@ echo "installing $package ........."
 dnf install $package -y &>> $LOG_FILE
 VALIDATE $package $?
 else 
-echo -e " $TIMESTAMP {INFO} $package is already installed... $Y skipping$N" | tee -a $LOG_FILE
+echo -e " $TIMESTAMP {INFO} $package is already installed... $Y skipping $N" | tee -a $LOG_FILE
 fi
 
 done
