@@ -22,3 +22,4 @@ exit 1
  echo "My sql installation is SUCCESS"
  fi 
  fi
+fi
