@@ -1,0 +1,20 @@
+#!bin/bash
+
+usr_id=$(id -u)
+
+if [ $usr_id -ne 0 ]; then
+
+echo "please run this script with root access"
+exit 1
+ else
+
+ echo "installing my sql......."
+ dnf install mysql -y
+
+ if [ $? -ne 0 ]; then
+
+ echo "My sql installation is failure"
+exit 1
+ else 
+ echo "My sql installation is SUCCESS"
+ 
