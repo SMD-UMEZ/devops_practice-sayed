@@ -7,9 +7,12 @@ if [ $usr_id -ne 0 ]; then
 echo "please run this script with root access"
 exit 1
  else
-
+ dnf list installed mysql
+if [ $? -eq 0 ]; then
+echo "My sql is already installed........Skipping"
+else
  echo "installing my sql......."
- dnf install mysqljjj -y
+ dnf install mysql -y
 
  if [ $? -ne 0 ]; then
 
