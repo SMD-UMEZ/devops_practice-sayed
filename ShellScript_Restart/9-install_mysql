@@ -9,7 +9,7 @@ exit 1
  else
 
  echo "installing my sql......."
- dnf install mysql -y
+ dnf install mysql() -y
 
  if [ $? -ne 0 ]; then
 
