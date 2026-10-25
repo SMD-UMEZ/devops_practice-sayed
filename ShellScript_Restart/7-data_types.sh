@@ -15,3 +15,5 @@ echo " $SUM2 "
 Movies=("RRR" "Bahubali" "Billa")
 
 echo "movies are : ${Movies[@]}"
+echo "first movie is : ${Movies[0]}"
+echo "last movie is : ${Movies[2]}"
