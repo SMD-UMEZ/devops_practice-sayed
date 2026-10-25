@@ -17,4 +17,5 @@ exit 1
 exit 1
  else 
  echo "My sql installation is SUCCESS"
- 
+ fi 
+ fi
