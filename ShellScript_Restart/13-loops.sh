@@ -20,7 +20,7 @@ VALIDATE() {
 for package in $@ 
 do 
 
-dnf list installed $package | tee -a $LOG_FILE
+dnf list installed $package
 if [ $? -ne 0 ]; then
 echo "installing $package ........."
 dnf install $package -y &>> $LOG_FILE
