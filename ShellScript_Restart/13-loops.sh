@@ -21,7 +21,7 @@ for package in $@
 do 
 
 dnf list installed $package | tee -a $LOG_FILE
-if [ $? -ne 0 ];then
+if [ $? -ne 0 ]; then
 echo "installing $package ........."
 dnf install $package -y &>> $LOG_FILE
 VALIDATE $package $?
