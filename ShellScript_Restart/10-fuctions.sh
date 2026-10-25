@@ -6,7 +6,7 @@ if [ $userid -ne 0 ]; then
 
 echo "please login and run with root access"
 exit 1
-
+else
 
 
 VALIDATE() {
