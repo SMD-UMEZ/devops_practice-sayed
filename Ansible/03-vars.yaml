@@ -2,7 +2,7 @@
   hosts: local1
   connection: local
   Var_file:
-  - V.yaml
+   - V.yaml
   tasks:
   - name: "printing information"
     debug:
