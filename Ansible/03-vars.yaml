@@ -1,4 +1,4 @@
-- name: Testing on Var_file
+- name: testing on Var_file
   hosts: local1
   connection: local
   Vars_file:
@@ -7,8 +7,8 @@
   - name: "printing information"
     debug:
      msg: "Hi, I'm Learning {{COURSE}},Our trainer is {{TRAINER}}. Duration is {{DURATION}}"
-     
-- name: Testing on Var_file
+
+- name: testing on Var_file
   hosts: local1
   connection: local
   vars_files:
