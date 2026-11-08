@@ -1,4 +1,4 @@
-- name: "Testing on variables"
+- name: Testing on Var_file
   hosts: local1
   connection: local
   Var_file:
