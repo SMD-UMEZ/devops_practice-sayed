@@ -1,0 +1,9 @@
+- name: Testing on variables
+  hosts: local
+  connection: local
+  Var_file:
+  - variable.yaml
+  tasks:
+  - name: printing information
+    debug:
+     msg: "Hi, I'm Learning {{COURSE}},Our trainer is {{TRAINER}}. Duration is {{DURATION}}"
