@@ -1,5 +1,5 @@
 - name: "Testing on variables"
-  hosts: local
+  hosts: local1
   connection: local
   Var_file:
   - variables.yaml
