@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   Var_file:
-  - variable.yaml
+  - variables.yaml
   tasks:
   - name: printing information
     debug:
