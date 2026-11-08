@@ -1,7 +1,7 @@
 - name: Testing on Var_file
   hosts: local1
   connection: local
-  Var_file:
+  Vars_file:
    - V.yaml
   tasks:
   - name: "printing information"
