@@ -1,4 +1,4 @@
-- name: testing on vars_file
+- name: testing on varsfdfd_file
   hosts: local1
   connection: local
   vars_files:
@@ -7,13 +7,3 @@
   - name: "printing information"
     debug:
      msg: "Hi, I'm Learning {{COURSE}},Our trainer is {{TRAINER}}. Duration is {{DURATION}}"
-
-- name: testing on Var_file
-  hosts: local1
-  connection: local
-  vars_files:
-     - V.yaml
-  tasks:
-    - name: "printing information"
-      debug:
-        msg: "Hi, I'm Learning {{COURSE}}, Our trainer is {{TRAINER}}. Duration is {{DURATION}}"
