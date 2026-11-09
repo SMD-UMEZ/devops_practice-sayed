@@ -12,7 +12,7 @@
    more_details: # map
     months: "5"
     trainer: "siva kumar reddy"
-   tasks:
+  tasks:
    - name: printing information
      msg: |
       Course_name: {{COURSE}} 
