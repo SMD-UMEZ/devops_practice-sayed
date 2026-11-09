@@ -1,6 +1,6 @@
 - name: testing on invetory variables
-  hosts: local
-  connection: local
+  hosts: frontend
+  #connection: local
   tasks:
   - name: printing information
     debug:
