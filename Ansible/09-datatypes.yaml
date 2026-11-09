@@ -1,5 +1,5 @@
 - name: "COURSE INFORMATION"
-  hosts: frontend
+  hosts: localhost
   connection: local
   vars:
    COURSE: "DevOps and AiOps" #string
