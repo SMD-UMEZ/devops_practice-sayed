@@ -1,0 +1,10 @@
+- name: check the no.of sessions
+  hosts: localhost
+  connection: local
+  vars:
+   session: 6
+  tasks:
+  - name: is ansible morethan 5 sessions
+    debug:
+     msg: "Yes, ansible having more than 5 sessions"
+    when: session < 7 
