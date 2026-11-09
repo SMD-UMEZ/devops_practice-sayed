@@ -1,0 +1,7 @@
+- name: testing on group_vars
+  hosts: frontend
+  connection: local
+  tasks:
+   - name: printing information
+     debug:
+      msg: "Hi, I'm Learning {{COURSE}}, My trainer is {{TRAINER}}, Duration is {{DURATION}} common_key is {{common_key}}"
