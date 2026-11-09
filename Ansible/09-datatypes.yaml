@@ -9,7 +9,7 @@
    - linux
    - shell
    - ansible
-   more_details: # map
+   more_detailss: # map
     months: "5"
     trainer: "siva kumar reddy"
   tasks:
@@ -18,6 +18,6 @@
      msg: |
       Course_name: {{COURSE}} 
       Duration_time: {{DURATION}}
-      is it live? : {{live session}}
+      is it live? : {{live_session}}
       what are the topics covered: "{{topics}}"
-      more_details: {{more_details}}       
+      more_details: {{more_detailss}}       
