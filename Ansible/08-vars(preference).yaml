@@ -16,3 +16,10 @@
     debug:
      msg: "My name is {{F_N}}" 
 
+# 1 CMD args
+# 2 tasks
+# 3 vars_file
+# 4 prompt
+# 5 vars_play
+# 6 inventory/groups_vars  
+
