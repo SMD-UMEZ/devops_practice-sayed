@@ -1,0 +1,7 @@
+- name: testing on invetory variables
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing information
+    debug:
+     msg: "Hi, I'm Learning {{COURSE}}, My trainer is {{TRAINER}}, Duration is {{DURATION}}"
