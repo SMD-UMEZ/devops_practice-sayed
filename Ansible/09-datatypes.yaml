@@ -13,8 +13,8 @@
     months: "5"
     trainer: "siva kumar reddy"
   tasks:
-   - name: printing information
-     msg: |
+  - name: printing information
+    msg: |
       Course_name: {{COURSE}} 
       Duration_time: {{DURATION}}
       is it live? : {{live session}}
