@@ -1,0 +1,18 @@
+- name: checking the var_preference
+  hosts: frontend
+  connection: local
+  vars:
+   F_N: "SAYED_play"
+  vars_files:
+   - V.yaml
+  vars_prompt:
+  - name: F_N
+    prompt: What is your F_N
+    private: true 
+  tasks:
+  - name: inside task name
+    vars:
+     F_N: "SAYED_task"
+    debug:
+     msg: "My name is {{F_N}}" 
+
