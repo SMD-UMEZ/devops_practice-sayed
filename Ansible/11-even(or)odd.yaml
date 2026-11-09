@@ -7,9 +7,9 @@
   - name: is given no. is even?
     debug:
      msg: "YES, given NO. is even"
-    when: given_no % 2 == 0
+    when: given_no % 5 == 0
 
   - name: is given no. is odd?
     debug:
      msg: "YES, given NO. is odd"
-    when: given_no % 2 != 0
+    when: given_no % 5 != 0
