@@ -4,7 +4,7 @@
   vars:
    COURSE: "DevOps and AiOps" #string
    DURATION: 150 #int/number
-   live session: true #bool
+   live_session: true #bool
    topics: #list
    - linux
    - shell
