@@ -2,9 +2,9 @@
   hosts: localhost
   connection: local
   vars:
-   session: 6
+   session: 4
   tasks:
   - name: is ansible morethan 5 sessions
     debug:
      msg: "Yes, ansible having more than 5 sessions"
-    when: session < 7 
+    when: session > 5 
