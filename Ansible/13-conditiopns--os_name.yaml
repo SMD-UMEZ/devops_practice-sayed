@@ -1,0 +1,13 @@
+- name: What is the current OS name
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: current OS is Redhat (Y/N)
+    debug:
+     msg: "YES, the current OS is Redhat"
+    when: ansible_facts.os_family == RedHat
+
+  - name: current OS is Debian (Y/N)
+    debug:
+     msg: "YES, the current OS is Debian"
+    when: ansible_facts.os_family != RedHat
