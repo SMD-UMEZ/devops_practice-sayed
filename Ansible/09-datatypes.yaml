@@ -15,9 +15,9 @@
   tasks:
   - name: printing information
     debug:
-       msg: |
-        Course_name: {{COURSE}} 
-        Duration_time: {{DURATION}}
-        is it live? : {{live session}}
-        what are the topics covered: "{{topics}}"
-        more_details: {{more_details}}       
+     msg: |
+      Course_name: {{COURSE}} 
+      Duration_time: {{DURATION}}
+      is it live? : {{live session}}
+      what are the topics covered: "{{topics}}"
+      more_details: {{more_details}}       
