@@ -1,0 +1,7 @@
+- name: testing on cmd(args)
+  hosts: local
+  connection: local
+  tasks:
+  - name: printing name
+    debug:
+     msg: "My Name is {{name}}"
