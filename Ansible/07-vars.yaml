@@ -1,5 +1,5 @@
 - name: testing on cmd(args)
-  hosts: local
+  hosts: frontend
   connection: local
   tasks:
   - name: printing name
