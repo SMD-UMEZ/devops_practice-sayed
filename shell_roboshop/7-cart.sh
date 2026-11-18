@@ -61,6 +61,8 @@ fi
  npm install &>> $LOG_FILE
  Valid $? "Unzipping code and installing dependencies"
 
+ rm -rf /etc/systemd/system/cart.service
+ 
  cp $script_dir/cart.repo /etc/systemd/system/cart.service
  Valid $? "creating systemctl service"
 

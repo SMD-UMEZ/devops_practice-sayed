@@ -44,12 +44,14 @@ rm -rf /app
 
  rm -rf /tmp/payment.zip
  curl -L -o /tmp/payment.zip https://roboshop-artifacts.s3.amazonaws.com/payment-v3.zip 
-cd /app 
-unzip /tmp/payment.zip &>> $LOG_FILE
-pip3 install -r requirements.txt &>> $LOG_FILE
-Valid $? "Unzipping code and installing dependencies"
+    cd /app 
+    unzip /tmp/payment.zip &>> $LOG_FILE
+    pip3 install -r requirements.txt &>> $LOG_FILE
+    Valid $? "Unzipping code and installing dependencies"
 
-cp $script_dir/payment.repo /etc/systemd/system/payment.service
+ rm -rf /etc/systemd/system/payment.service
+
+ cp $script_dir/payment.repo /etc/systemd/system/payment.service
  Valid $? "creating systemctl service"
 
  systemctl daemon-reload &>> $LOG_FILE

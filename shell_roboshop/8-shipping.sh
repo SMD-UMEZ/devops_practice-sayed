@@ -31,7 +31,7 @@ dnf list installed maven &>> $LOG_FILE
 if [ $? -eq 0 ]; then
  echo -e " $TIMESTAMP {INFO} $Y  maven is already installed....SKIPPING $N " | tee -a $LOG_FILE
  else
-
+ echo "Installing maven ........" 
  dnf install maven -y &>> $LOG_FILE
  Valid $? maven installation
 fi
@@ -49,15 +49,17 @@ rm -rf /app
 
  rm -rf /tmp/shipping.zip
  curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip 
-cd /app 
-unzip /tmp/shipping.zip &>> $LOG_FILE
-Valid $? "Unzipping code and installing dependencies"
+    cd /app 
+    unzip /tmp/shipping.zip &>> $LOG_FILE
+    Valid $? "Unzipping code and installing dependencies"
 
-cd /app 
-mvn clean package &>> $LOG_FILE
-mv target/shipping-1.0.jar shipping.jar &>> $LOG_FILE
+    cd /app 
+    mvn clean package &>> $LOG_FILE
+    mv target/shipping-1.0.jar shipping.jar &>> $LOG_FILE
 
-cp $script_dir/shipping.repo /etc/systemd/system/shipping.service
+ rm -rf /etc/systemd/system/shipping.service
+
+ cp $script_dir/shipping.repo /etc/systemd/system/shipping.service
  Valid $? "creating systemctl service"
 
  dnf install mysql -y &>> $LOG_FILE
@@ -69,9 +71,9 @@ if [ "$?" -eq 0 ]; then
     echo "Data is already loaded ( tables found)."
 else
     echo "Database is empty. Proceeding with data load..."
-    mysql -h mysql.mylab.sbs -uroot -pRoboShop@1 < /app/db/schema.sql
-    mysql -h mysql.mylab.sbs -uroot -pRoboShop@1 < /app/db/app-user.sql
-    mysql -h mysql.mylab.sbs -uroot -pRoboShop@1 < /app/db/master-data.sql
+    mysql -h mysql.mylab.sbs -u root -pRoboShop@1 < /app/db/schema.sql
+    mysql -h mysql.mylab.sbs -u root -pRoboShop@1 < /app/db/app-user.sql
+    mysql -h mysql.mylab.sbs -u root -pRoboShop@1 < /app/db/master-data.sql
 fi
 
 systemctl daemon-reload

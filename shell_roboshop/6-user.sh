@@ -61,6 +61,8 @@ fi
  npm install  &>> $LOG_FILE
  Valid $? "Unzipping code and installing dependencies"
 
+ rm -rf /etc/systemd/system/user.service
+ 
  cp $script_dir/user.service /etc/systemd/system/user.service
  Valid $? "creating systemctl service"
 

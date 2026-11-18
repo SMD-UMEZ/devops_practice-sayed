@@ -43,7 +43,7 @@ name=$1
    --query 'Instances[0].InstanceId' \
    --output text
                    )
-      echo -e " $G $instance Launched Instance $N : $INSTANCE_ID"
+      echo -e " $G $instance Instance Launched $N : $INSTANCE_ID"
       else
        echo -e " $Y roboshop-$instance is already exists $N : $INSTANCE_ID"
        fi
@@ -74,7 +74,7 @@ name=$1
       else
           aws ec2 terminate-instances --instance-ids $INSTANCE_ID
 
-          echo -e "$G Terminating instances : $instance $N "
+          echo -e "$G Terminating instances : $instance $N.........."
 
        fi     
     fi

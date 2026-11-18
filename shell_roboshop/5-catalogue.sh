@@ -64,6 +64,8 @@ fi
  cp $script_dir/catalogue.repo /etc/systemd/system/catalogue.service
  Valid $? "creating systemctl service"
 
+ rm -rf /etc/yum.repos.d/mongo.repo
+
  cp $script_dir/mongo.repo /etc/yum.repos.d/mongo.repo
  Valid $? "Adding Mongo repo"
 

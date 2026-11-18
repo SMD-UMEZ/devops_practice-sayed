@@ -32,6 +32,8 @@ if [ $? -eq 0 ]; then
  echo -e " $TIMESTAMP {INFO} $Y  rabbitmq-server is already installed....SKIPPING $N " | tee -a $LOG_FILE
  else
 
+ rm -rf /etc/yum.repos.d/rabbitmq.repo
+
  cp rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo
  Valid $? "Adding rabbitMQ"
 
